@@ -1,0 +1,17 @@
+version: "0.1"
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql8
+    environment:
+      - TZ=Asia/ShangHai
+      - MYSQL_USER=albert
+      - MYSQL_PASSWORD=kylin
+      - MYSQL_ROOT_PASSWORD=kylin
+    volumes:
+      - /opt/docker/mysql/conf:/etc/mysql/conf.d
+      - /opt/docker/mysql/log:/var/log/mysql
+      - /opt/docker/mysql/data:/var/lib/mysql
+    ports:
+      - 6033:3306
+    privileged: true

@@ -1,0 +1,14 @@
+version: "0.1"
+services:
+  rabbitmq:
+    image: rabbitmq:3.8.3-management
+    container_name: rabbitmq
+    hostname: arch_rabbit
+    environment:
+      - RABBITMQ_DEFAULT_USER=albert
+      - RABBITMQ_DEFAULT_PASS=kylin
+    volumes:
+      - /opt/docker/rabbitmq/data:/var/lib/rabbitmq
+    ports:
+      - 15672:15672
+      - 5672:5672

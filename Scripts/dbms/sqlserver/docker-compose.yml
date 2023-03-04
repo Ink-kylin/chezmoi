@@ -1,0 +1,16 @@
+version: "0.1"
+services:
+  sqlserver2019:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sql2019
+    hostname: sql2019
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Ikylin62#
+    volumes:
+      - /opt/mssql/data:/var/opt/mssql/data
+      - /opt/mssql/log:/var/opt/mssql/log
+      - /opt/mssql/secrets:/var/opt/mssql/secrets
+    ports:
+      - 3341:1433
+    privileged: true

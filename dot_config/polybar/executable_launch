@@ -1,0 +1,10 @@
+#!/usr/bin/zsh
+
+killall -q polybar
+
+polybar -r
+
+
+
+
+
